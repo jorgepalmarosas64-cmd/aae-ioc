@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: aae-ioc
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.address 0.0.0.0 --server.port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: VIRUSTOTAL_API_KEY
+        sync: false
+      - key: OTX_API_KEY
+        sync: false
+      - key: ABUSEIPDB_API_KEY
+        sync: false
